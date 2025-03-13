@@ -1,0 +1,14 @@
+
+.menu-bar ul   {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-bar > ul > li {
+  margin-right:  20px;
+  list-style: none;
+}
+
+.menu-bar > ul > li > a, span {
+  color: #FAE944;
+}
