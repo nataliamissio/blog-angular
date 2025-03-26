@@ -1,44 +1,85 @@
 .container__big-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #111;
-  padding: 16px;
+  padding: 1.5rem; 
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 1rem;
   width: 100%;
   max-width: 600px;
+  height: 600px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
   }
+
+  @media (max-width: 700px) {
+    max-width: 350px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.big-card__photo {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.big-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.big-card__photo__date {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  color: #f6ddfb;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 4px;
 }
 
 .big-card__content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  gap: 0.5rem;
+  flex-grow: 1;
+  align-items: center;
 }
 
-.big-card__title h1 > a{
-color: #A6246C;
+.big-card__title h1 > a {
+  color: #A6246C;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-align: center;
 }
-.big-card__date {
-  font-size: 12px;
+
+.big-card__title h1 > a:hover {
   color: #bbb;
-  margin-bottom: 8px;
-}
-
-.big-card__photo img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-.big-card__photo__date {
-  color: #f6ddfb;
 }
 
 .big-card__description {
-  margin-top: 12px;
+  font-size: 1rem;
+  color: #f6ddfb;
+  text-align: center;
+  word-wrap: break-word;
+  margin-top: 1rem;
+  max-height: 150px;
+  overflow: hidden;
 }
 
 .big-card__description a {
@@ -47,6 +88,6 @@ color: #A6246C;
   transition: color 0.3s ease;
 
   &:hover {
-    color: #1db954;
+    color: #bbb;
   }
 }
